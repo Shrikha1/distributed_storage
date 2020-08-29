@@ -7,7 +7,9 @@
     "license": "MIT",
     "scripts": {
         "build": "webpack --mode production",
-        "start": "webpack-dev-server --open --mode development"
+        "start": "webpack-dev-server --open --mode development",
+        "backend": "npm start --prefix backend",
+        "dev": "concurrently \"npm run start\" \"npm run backend\""
     },
     "dependencies": {
         "axios": "^0.20.0",

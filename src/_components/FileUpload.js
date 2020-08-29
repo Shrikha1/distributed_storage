@@ -21,7 +21,7 @@ const FileUpload = () => {
     formData.append('file', file);
 
     try {
-      const res = await axios.post('/upload', formData, {
+      const res = await axios.post('http://localhost:4000/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -43,11 +43,9 @@ const FileUpload = () => {
 
       setMessage('File Uploaded');
     } catch (err) {
-      if (err.response.status === 500) {
+      if (err.response.status === 500 | err.response.status === 404) {
         setMessage('There was a problem with the server');
-      } else if(err.response.status === 404){
-        setMessage('POST method not found')
-      }
+      } 
       else {  
         setMessage(err.response.data.msg);
       }
