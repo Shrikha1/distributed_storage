@@ -21,8 +21,6 @@ app.use('/accounts', require('./accounts/accounts.controller'));
 // swagger docs route
 app.use('/api-docs', require('_helpers/swagger'));
 
-// upload files route
-app.use('/upload', require('./uploads/files').route);
 
 // global error handler
 app.use(errorHandler);

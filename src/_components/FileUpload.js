@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Message from './Message';
 import Progress from './Progress';
 import axios from 'axios';
@@ -10,7 +10,7 @@ const FileUpload = () => {
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
-  const onChange = e => {
+  const onChange = async e => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
   };
@@ -45,12 +45,15 @@ const FileUpload = () => {
     } catch (err) {
       if (err.response.status === 500) {
         setMessage('There was a problem with the server');
-      } else {
+      } else if(err.response.status === 404){
+        setMessage('POST method not found')
+      }
+      else {  
         setMessage(err.response.data.msg);
       }
     }
   };
-
+  
   return (
     <Fragment>
       {message ? <Message msg={message} /> : null}

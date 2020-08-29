@@ -1,11 +1,10 @@
 {
-    "name": "node-mongo-signup-verification-api",
+    "name": "backend-using-nodejs-mongodb",
     "version": "1.0.0",
     "description": "NodeJS + MongoDB API for Email Sign Up with Verification, Authentication & Forgot Password",
     "license": "MIT",
     "repository": {
-        "type": "git",
-        "url": "https://github.com/cornflourblue/node-mongo-signup-verification-api.git"
+        "type": "git"
     },
     "scripts": {
         "start": "node ./server.js",

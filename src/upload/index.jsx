@@ -6,9 +6,9 @@ function Upload() {
     return (
         <div className="p-4">
             <div className="container">
-                <h1 className="text-center">Upload your files to IPFS.</h1>    
+                <h1 className="text-center">Upload Your Files to IPFS.</h1>    
             </div>
-        <FileUpload />
+            <FileUpload/>
         </div>
     );
 }

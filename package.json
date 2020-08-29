@@ -1,9 +1,8 @@
 {
-    "name": "react-signup-verification-boilerplate",
+    "name": "distributed-file-storage",
     "version": "1.0.0",
     "repository": {
-        "type": "git",
-        "url": "https://github.com/cornflourblue/react-signup-verification-boilerplate.git"
+        "type": "git"
     },
     "license": "MIT",
     "scripts": {

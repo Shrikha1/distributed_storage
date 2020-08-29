@@ -8,7 +8,13 @@ function Home() {
         <div className="p-4">
             <div className="container">
                 <h1>Hi {user.firstName}!</h1>
-                <p>Upload your File</p>
+                <p>Why choose <i>DECENTRALIZED SYSTEM</i> over <i></i>CENTRALIZED STORAGE<i></i> ?</p>
+                <ul>
+                    <li>Greater Security and Privacy</li>
+                    <li>Faster Speeds</li>
+                    <li>Low Storage Costs</li>
+                    <li>Minimal File Loss</li>
+                    </ul>
             </div>
         </div>
     );
