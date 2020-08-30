@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import Message from './Message';
 import Progress from './Progress';
 import axios from 'axios';
@@ -10,7 +10,8 @@ const FileUpload = () => {
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
-  const onChange = async e => {
+  const onChange = e => {
+    // single file upload
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
   };
@@ -37,21 +38,20 @@ const FileUpload = () => {
         }
       });
 
-      const { fileName, filePath } = res.data;
+      const { fileName, fileHash } = res.data;
 
-      setUploadedFile({ fileName, filePath });
+      setUploadedFile({ fileName, fileHash});
 
       setMessage('File Uploaded');
     } catch (err) {
-      if (err.response.status === 500 | err.response.status === 404) {
+      if (err.response.status === 500) {
         setMessage('There was a problem with the server');
-      } 
-      else {  
+      } else {
         setMessage(err.response.data.msg);
       }
     }
   };
-  
+
   return (
     <Fragment>
       {message ? <Message msg={message} /> : null}
@@ -80,7 +80,7 @@ const FileUpload = () => {
         <div className='row mt-5'>
           <div className='col-md-6 m-auto'>
             <h3 className='text-center'>{uploadedFile.fileName}</h3>
-            <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+            <a href={"https://ipfs.io/ipfs/"+uploadedFile.fileHash}>{uploadedFile.fileHash}</a>
           </div>
         </div>
       ) : null}
