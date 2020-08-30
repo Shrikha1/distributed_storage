@@ -1,6 +1,6 @@
 # Cloud_titan, Digital Ocean Hackathon
 ## Project Description
-Optimized Cloud Storage System Using Decentralized File Storage
+### Optimized Cloud Storage System Using Decentralized File Storage
 An application based on decentralization, where users can upload files, images. The media is stored in chunks in multiple nodes on the network. When the user requests for a certain file, the data is retrieved parallely from these nodes, using IPFS architecture.Using the concept of IPFS this project aims to upload file on IPFS and retrieve back the hash of files.
 
 
